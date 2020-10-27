@@ -9,12 +9,21 @@
  * Auto Activate: No
  * Module Tags: General
  * Additional Search Queries: adminbar, masterbar, colorschemes
+ *
+ * @package Jetpack
  */
 
 namespace Automattic\Jetpack\Dashboard_Customizations;
+
+use Automattic\Jetpack\Admin_Menu;
 
 require dirname( __FILE__ ) . '/masterbar/masterbar/masterbar.php';
 require dirname( __FILE__ ) . '/masterbar/admin-color-schemes/admin-color-schemes.php';
 
 new Masterbar();
 new Admin_Color_Schemes();
+
+if ( apply_filters( 'jetpack_load_admin_menu_class', false ) ) {
+	require_once __DIR__ . '/masterbar/class-admin-menu.php';
+	Admin_Menu::get_instance();
+}
