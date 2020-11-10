@@ -23,7 +23,12 @@ require dirname( __FILE__ ) . '/masterbar/admin-color-schemes/admin-color-scheme
 new Masterbar();
 new Admin_Color_Schemes();
 
-if ( apply_filters( 'jetpack_load_admin_menu_class', ( defined( 'IS_WPCOM' ) && IS_WPCOM ) || jetpack_is_atomic_site() ) ) {
+/**
+ * Whether to load the admin menu functionality.
+ *
+ * @use add_filter( 'jetpack_load_admin_menu_class', '__return_true' );
+ */
+if ( apply_filters( 'jetpack_load_admin_menu_class', false ) ) {
 	require_once __DIR__ . '/masterbar/class-admin-menu.php';
 	Admin_Menu::get_instance();
 }
