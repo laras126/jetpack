@@ -5,7 +5,7 @@
  * @package A8C\Admin_Plugins
  */
 
-namespace Automattic\Jetpack;
+namespace Automattic\Jetpack\Dashboard_Customizations;
 
 /**
  * Class Admin_Menu.
