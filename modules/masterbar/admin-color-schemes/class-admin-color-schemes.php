@@ -18,11 +18,21 @@ class Admin_Color_Schemes {
 	public function __construct() {
 		add_action( 'admin_init', array( $this, 'init' ) );
 	}
-
 	/**
 	 * Init.
 	 */
 	public function init() {
-		// Start here.
+
+		wp_admin_css_color(
+			'classic-bright',
+			__( 'Classic Bright', 'jetpack' ),
+			plugins_url( 'colors/classic-bright/colors.css', __FILE__ ),
+			array( '#135e96', '#c9256e', '#ffffff', '#646970' ),
+			array(
+				'base'    => '#646970',
+				'focus'   => '#fff',
+				'current' => '#fff',
+			)
+		);
 	}
 }
