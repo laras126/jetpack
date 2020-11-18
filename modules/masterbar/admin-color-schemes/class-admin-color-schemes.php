@@ -24,6 +24,18 @@ class Admin_Color_Schemes {
 	public function init() {
 
 		wp_admin_css_color(
+			'aquatic',
+			__( 'Aquatic', 'jetpack' ),
+			plugins_url( 'colors/aquatic/colors.css', __FILE__ ),
+			array( '#135e96', '#043959', '#ffffff', '#646970' ),
+			array(
+				'base'    => '#646970',
+				'focus'   => '#fff',
+				'current' => '#fff',
+			)
+		);
+
+		wp_admin_css_color(
 			'classic-bright',
 			__( 'Classic Bright', 'jetpack' ),
 			plugins_url( 'colors/classic-bright/colors.css', __FILE__ ),
@@ -34,5 +46,6 @@ class Admin_Color_Schemes {
 				'current' => '#fff',
 			)
 		);
+
 	}
 }
